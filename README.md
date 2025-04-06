@@ -1,10 +1,5 @@
 # Pakistan Land Surface Temperature Analysis using MODIS Satellite Data
 
-**Author:** Qandeel Fatima  
-**Date:** April–May 2025  
-**Course:** Comprehensive Elective Project (CEP)  
-**Dataset:** NASA MODIS MOD11A2 v061 | Admin Boundaries: GADM
-
 ---
 
 ## Overview
