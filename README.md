@@ -1,12 +1,8 @@
 # Pakistan Land Surface Temperature Analysis using MODIS Satellite Data
 
----
-
 ## Overview
 
 This project analyzes **Land Surface Temperature (LST)** across Pakistan for **April 2025** using NASA's MODIS Terra satellite product **MOD11A2** (8-day composite at 1 km resolution). The workflow covers data acquisition via NASA Earthdata, tile mosaicking, raster clipping to Pakistan's boundary, district-level zonal statistics, and a suite of spatial and temporal visualizations.
-
----
 
 ## Project Workflow
 
@@ -25,8 +21,6 @@ NASA Earthdata (MOD11A2)
         ↓
   Visualizations & Analysis
 ```
-
----
 
 ## Dependencies
 
@@ -47,8 +41,6 @@ pip install numpy geopandas matplotlib GDAL affine rasterio rasterstats \
 | `matplotlib` | All visualizations |
 | `matplotlib-scalebar` | Scale bar on maps |
 
----
-
 ## Data Sources
 
 - **MODIS MOD11A2.061** — 8-day Land Surface Temperature & Emissivity, 1 km, Terra satellite
@@ -56,8 +48,6 @@ pip install numpy geopandas matplotlib GDAL affine rasterio rasterstats \
   - Spatial coverage: Pakistan bounding box (60°–78°E, 23°–38°N)
   - Tiles: h22v05, h23v05, h24v05, h25v05, h22v06, h23v06, h24v06, h25v06
 - **GADM Pakistan Level 3** (`gadm41_PAK_3.shp`) — District/Tehsil boundaries (141 features)
-
----
 
 ## Results & Visualizations
 
@@ -69,8 +59,6 @@ Mean LST computed across all downloaded tiles covering the South Asia region, be
 
 > **Date range:** 2025-089 (March 30) to 2025-113 (April 23). The cold blue band running diagonally is the Himalayan and Karakoram mountain arc; the red/orange regions are the Indus plains and Balochistan.
 
----
-
 ### 2. Mean LST per District — Plasma Colormap
 
 District-level mean LST after clipping the raster to Pakistan and computing zonal statistics. The `plasma` colormap highlights the stark contrast between the cold north (KPK, Gilgit-Baltistan) and the hot south/southwest (Sindh, southern Balochistan).
@@ -79,15 +67,11 @@ District-level mean LST after clipping the raster to Pakistan and computing zona
 
 > Northern districts (purple/blue) record mean LSTs well below 10 °C due to glaciated terrain. Southern Sindh and Balochistan (yellow) exceed 40 °C.
 
----
-
 ### 3. District-Level LST — Blue-Red Diverging Map
 
 The same district-level data rendered with a blue–white–red diverging colormap, emphasizing the cold north vs hot south pattern. Districts in Gilgit-Baltistan (deep blue) register the lowest LSTs; Kech, Chagai, and Awaran (deep red) are the hottest.
 
 ![District LST Diverging](images/03_mean_district_lst_blue_red.png)
-
----
 
 ### 4. Cartographic Map — Pakistan LST by District (April 2025)
 
@@ -103,8 +87,6 @@ A publication-quality cartographic map with:
 
 > LST range: **25.1 °C to 44.7 °C** across districts. The highest LSTs are concentrated in Balochistan and southern Sindh, while Gilgit-Baltistan and AJK show the lowest values due to high elevation.
 
----
-
 ### 5. Average LST Ranked by Administrative Unit (ADM3)
 
 A ranked bar chart showing all 141 administrative units (ADM3 level) sorted from hottest to coldest. Each bar is colored using the `viridis` palette.
@@ -113,8 +95,6 @@ A ranked bar chart showing all 141 administrative units (ADM3 level) sorted from
 
 > **Hottest units:** Kech (~45.7 °C), Chagai (~45.2 °C), Awaran (~45.2 °C)  
 > **Coldest units:** Kupwara/Gilgit Wazarat (~2.2 °C), Ladakh/Leh (~−0.8 °C)
-
----
 
 ### 6. Top 10 Hottest & Coldest Administrative Units
 
@@ -132,8 +112,6 @@ Side-by-side bar charts highlighting the extremes:
 | 4 | Kharan | ~45.0 | Gilgit | ~3.5 |
 | 5 | Khairpur | ~45.0 | Neelum | ~4.1 |
 
----
-
 ### 7. Temporal Trend — Mean, Max & Min LST (April 2025)
 
 A multi-line time series showing how LST evolved across all available MODIS composites during April 2025:
@@ -145,8 +123,6 @@ A multi-line time series showing how LST evolved across all available MODIS comp
 
 > The upward trend in all three metrics reflects Pakistan's transition from late winter to pre-monsoon summer heating through April.
 
----
-
 ### 8. Continuous LST Heatmap (Raster)
 
 A pixel-level continuous heatmap of the clipped MODIS raster, rendered at 1 km resolution. This bypasses district boundaries and shows raw thermal variation including terrain effects (river valleys, mountain ridges, desert plains).
@@ -154,8 +130,6 @@ A pixel-level continuous heatmap of the clipped MODIS raster, rendered at 1 km r
 ![Continuous LST Heatmap](images/08_continuous_lst_heatmap.png)
 
 > The Himalayan/Karakoram arc (top-right, blue) contrasts sharply with the Balochistan plateau and Indus plains (orange/red). River valleys (Indus, Jhelum, Chenab) appear as slightly cooler strips within the plains.
-
----
 
 ## Key Findings
 
@@ -169,14 +143,12 @@ A pixel-level continuous heatmap of the clipped MODIS raster, rendered at 1 km r
 | Coldest district | Ladakh/Leh (~−0.8 °C) |
 | LST range across Pakistan | ~46 °C spread |
 
----
-
 ## Repository Structure
 
 ```
 .
 ├── QANDEEL_CEP_CODE.ipynb    # Main analysis notebook (Google Colab)
-├── README.md                  # This file
+├── README.md
 └── images/
     ├── 01_mean_lst_mosaic_raw.png
     ├── 02_mean_lst_pakistan_district.png
@@ -188,8 +160,6 @@ A pixel-level continuous heatmap of the clipped MODIS raster, rendered at 1 km r
     └── 08_continuous_lst_heatmap.png
 ```
 
----
-
 ## How to Run
 
 1. Open `QANDEEL_CEP_CODE.ipynb` in **Google Colab**
@@ -198,8 +168,6 @@ A pixel-level continuous heatmap of the clipped MODIS raster, rendered at 1 km r
 4. Run all cells in order
 
 > **Note:** A free NASA Earthdata account is required. Register at [urs.earthdata.nasa.gov](https://urs.earthdata.nasa.gov).
-
----
 
 ## References
 
